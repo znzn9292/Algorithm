@@ -18,11 +18,11 @@ import java.util.Scanner;
  */
 public class Main01 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String str = input.next().toLowerCase();   // 입력 문자열
-        char c = input.next().toLowerCase().charAt(0);  // 입력 문자
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next().toLowerCase();   // 입력 문자열
+        char c = sc.next().toLowerCase().charAt(0);  // 입력 문자
 
-        int strLength = str.length();
+        int strLength = input.length();
         if(strLength > 100) {
             System.out.println("The string cannot exceed 100 digits. ");
             return ;
@@ -38,7 +38,7 @@ public class Main01 {
 //        }
 
         // 2. 향상 for
-        for(char x : str.toCharArray()) {
+        for(char x : input.toCharArray()) {
             if(x == c) {
                 count ++;
             }
