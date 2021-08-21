@@ -25,9 +25,25 @@ public class Main04 {
             inputArr[i] = sc.next();
         }
 
+        // 1. StringBuilder.reverse() 사용
+//        for(String x : inputArr) {
+//            StringBuilder xBuilder = new StringBuilder(x);
+//            System.out.println(xBuilder.reverse());
+//        }
+
+        // 2. 자리 교환
         for(String x : inputArr) {
-            StringBuilder xBuilder = new StringBuilder(x);
-            System.out.println(xBuilder.reverse());
+            char[] s = x.toCharArray();
+            char temp;
+            int sLeng = s.length;
+
+            for(int i = 0; i < sLeng / 2; i++) {
+                temp = s[i];
+                s[i] = s[sLeng-i-1];
+                s[sLeng-i-1] = temp;
+            }
+
+            System.out.println(new String(s));
         }
     }
 }
